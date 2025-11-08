@@ -1,0 +1,963 @@
+{
+    "status": "OK",
+    "copyright": "Copyright (c) 2025 The New York Times Company. All Rights Reserved.",
+    "response": {
+        "docs": [
+            {
+                "abstract": "The unexpected combination of red lentils and canned pumpkin make the base of this richly spiced, hands-off soup, seasoned with earthy turmeric, smoky paprika and citrusy coriander. The slow-cooker recipe leans on budget-friendly pantry items for a lot of flavor payoff with very little work. Before serving, it takes just 10 minutes to toast pepitas with cumin and fry some chopped red onion, quickly yielding finishing touches that make an outsize contribution. You can also make this soup on the stovetop: Just combine the ingredients in a large pot as you would the slow cooker, bring to a low simmer and cover the pot. Cook, stirring occasionally, until the lentils are tender, about 30 minutes. (You may need to adjust the texture for the stovetop by adding a little bit more water.)&nbsp;",
+                "byline": {
+                    "original": "Sarah DiGregorio"
+                },
+                "document_type": "recipe",
+                "headline": {
+                    "main": "Slow Cooker Red Lentil Pumpkin Soup",
+                    "kicker": "",
+                    "print_headline": ""
+                },
+                "_id": "nyt://recipe/cab2d17c-376b-52b0-a533-673250fadea1",
+                "keywords": [
+                    {
+                        "name": "RecipeTag",
+                        "value": "Red Lentil",
+                        "rank": 1
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Pumpkin Purée",
+                        "rank": 2
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Ground Turmeric",
+                        "rank": 3
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Smoked Paprika",
+                        "rank": 4
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Ground Coriander",
+                        "rank": 5
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Ground Cinnamon",
+                        "rank": 6
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Soup",
+                        "rank": 7
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Lunch",
+                        "rank": 8
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Dinner",
+                        "rank": 9
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Main Course",
+                        "rank": 10
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Appetizer",
+                        "rank": 11
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Slow Cooker",
+                        "rank": 12
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Pepita",
+                        "rank": 13
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Cumin Seed",
+                        "rank": 14
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Vegetarian",
+                        "rank": 15
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Vegan",
+                        "rank": 16
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Healthy",
+                        "rank": 17
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Gluten-Free",
+                        "rank": 18
+                    },
+                    {
+                        "name": "RecipeTag",
+                        "value": "Dairy-Free",
+                        "rank": 19
+                    }
+                ],
+                "multimedia": {
+                    "caption": "",
+                    "credit": "Linda Xiao for The New York Times. Food Stylist: Monica Pierini.",
+                    "default": {
+                        "url": "https://static01.nyt.com/images/2025/11/07/multimedia/SD-Slow-Cooker-Red-Lentil-Pumpkin-Soup-ztpw/SD-Slow-Cooker-Red-Lentil-Pumpkin-Soup-ztpw-articleLarge.jpg",
+                        "height": 400,
+                        "width": 600
+                    },
+                    "thumbnail": {
+                        "url": "https://static01.nyt.com/images/2025/11/07/multimedia/SD-Slow-Cooker-Red-Lentil-Pumpkin-Soup-ztpw/SD-Slow-Cooker-Red-Lentil-Pumpkin-Soup-ztpw-thumbStandard.jpg",
+                        "height": 75,
+                        "width": 75
+                    }
+                },
+                "news_desk": "",
+                "print_page": "",
+                "print_section": "",
+                "pub_date": "2025-11-07T16:10:54Z",
+                "section_name": "",
+                "snippet": "",
+                "source": "",
+                "subsection_name": "",
+                "type_of_material": "Recipe",
+                "uri": "nyt://recipe/cab2d17c-376b-52b0-a533-673250fadea1",
+                "web_url": "https://cooking.nytimes.com/recipes/762526913-slow-cooker-red-lentil-pumpkin-soup",
+                "word_count": 0
+            },
+            {
+                "abstract": "Artists, albums and songs competing for trophies at the 68th annual ceremony are being announced on Friday. The show will take place on Feb. 1, 2026, at Crypto.com Arena in Los Angeles.",
+                "byline": {
+                    "original": ""
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "Grammy Awards 2026: The Nominees",
+                    "kicker": "",
+                    "print_headline": ""
+                },
+                "_id": "nyt://article/de9f496d-8f2b-5ae6-96e2-e257e534f9e6",
+                "keywords": [
+                    {
+                        "name": "Subject",
+                        "value": "Grammy Awards",
+                        "rank": 1
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Music",
+                        "rank": 2
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Pop and Rock Music",
+                        "rank": 3
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Rap and Hip-Hop",
+                        "rank": 4
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Country Music",
+                        "rank": 5
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Jazz",
+                        "rank": 6
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Classical Music",
+                        "rank": 7
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Latin Music",
+                        "rank": 8
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Rhythm and Blues (Music)",
+                        "rank": 9
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Lamar, Kendrick",
+                        "rank": 10
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Lady Gaga",
+                        "rank": 11
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Bad Bunny (Singer)",
+                        "rank": 12
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Leon Thomas",
+                        "rank": 13
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Carpenter, Sabrina (1999- )",
+                        "rank": 14
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "Clipse",
+                        "rank": 15
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Doechii (1998- )",
+                        "rank": 16
+                    },
+                    {
+                        "name": "Person",
+                        "value": "SZA (Singer)",
+                        "rank": 17
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "Turnstile (Music Group)",
+                        "rank": 18
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Tyler, the Creator",
+                        "rank": 19
+                    }
+                ],
+                "multimedia": {
+                    "caption": "",
+                    "credit": "Julio Cortez/Associated Press",
+                    "default": {
+                        "url": "https://static01.nyt.com/images/2024/11/08/multimedia/07cul-grammy-list-placeholder/08grammy-list-placeholder-pzgl-articleLarge.jpg",
+                        "height": 400,
+                        "width": 600
+                    },
+                    "thumbnail": {
+                        "url": "https://static01.nyt.com/images/2024/11/08/multimedia/07cul-grammy-list-placeholder/08grammy-list-placeholder-pzgl-thumbStandard.jpg",
+                        "height": 75,
+                        "width": 75
+                    }
+                },
+                "news_desk": "Culture",
+                "print_page": "",
+                "print_section": "",
+                "pub_date": "2025-11-07T16:00:41Z",
+                "section_name": "Arts",
+                "snippet": "Artists, albums and songs competing for trophies at the 68th annual ceremony are being announced on Friday. The show will take place on Feb. 1, 2026, at Crypto.com Arena in Los Angeles.",
+                "source": "The New York Times",
+                "subsection_name": "Music",
+                "type_of_material": "News",
+                "uri": "nyt://article/de9f496d-8f2b-5ae6-96e2-e257e534f9e6",
+                "web_url": "https://www.nytimes.com/2025/11/07/arts/music/grammys-nominee-list-2026.html",
+                "word_count": 766
+            },
+            {
+                "abstract": "Some reader (and staff) favorites from this week.",
+                "byline": {
+                    "original": "By The New York Times Cooking"
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "A Classic New Orleans Cocktail, Speedy Turkey Chili and ‘Stunning’ Cookies",
+                    "kicker": "",
+                    "print_headline": ""
+                },
+                "_id": "nyt://article/08ac754d-0a48-5e2f-9662-b457fc0bc3f9",
+                "keywords": [
+                    {
+                        "name": "Subject",
+                        "value": "Cooking and Cookbooks",
+                        "rank": 1
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Content Type: Service",
+                        "rank": 2
+                    }
+                ],
+                "multimedia": {
+                    "caption": "",
+                    "credit": "",
+                    "default": {
+                        "url": "https://static01.nyt.com/images/2020/04/21/multimedia/THE-MORNING-SECTION-BREAK/THE-MORNING-SECTION-BREAK-articleLarge.jpg",
+                        "height": 14,
+                        "width": 600
+                    },
+                    "thumbnail": {
+                        "url": "",
+                        "height": 0,
+                        "width": 0
+                    }
+                },
+                "news_desk": "Dining",
+                "print_page": "",
+                "print_section": "",
+                "pub_date": "2025-11-07T16:00:06Z",
+                "section_name": "Food",
+                "snippet": "Some reader (and staff) favorites from this week.",
+                "source": "The New York Times",
+                "subsection_name": "",
+                "type_of_material": "Letter",
+                "uri": "nyt://article/08ac754d-0a48-5e2f-9662-b457fc0bc3f9",
+                "web_url": "https://www.nytimes.com/2025/11/07/dining/a-classic-new-orleans-cocktail-speedy-turkey-chili-and-stunning-cookies.html",
+                "word_count": 204
+            },
+            {
+                "abstract": "This month’s picks include a loner on the razor’s edge, a witch on a bloodthirsty mission and an actress walking a doomed path.",
+                "byline": {
+                    "original": "By Erik Piepenburg"
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "Five Horror Movies to Stream Now",
+                    "kicker": "",
+                    "print_headline": ""
+                },
+                "_id": "nyt://article/1e0f7aca-c62c-5192-9199-eb9cfdc6a0b7",
+                "keywords": [
+                    {
+                        "name": "Subject",
+                        "value": "Movies",
+                        "rank": 1
+                    },
+                    {
+                        "name": "Title",
+                        "value": "Weapons (Movie)",
+                        "rank": 2
+                    },
+                    {
+                        "name": "Title",
+                        "value": "The Substance (Movie)",
+                        "rank": 3
+                    }
+                ],
+                "multimedia": {
+                    "caption": "Ryan Schafer in “Sincerely Saul.”",
+                    "credit": "Children of Celluloid",
+                    "default": {
+                        "url": "https://static01.nyt.com/images/2025/11/07/arts/07cul-horror-streaming1/07cul-horror-streaming1-articleLarge.jpg",
+                        "height": 407,
+                        "width": 600
+                    },
+                    "thumbnail": {
+                        "url": "https://static01.nyt.com/images/2025/11/07/arts/07cul-horror-streaming1/07cul-horror-streaming1-thumbStandard.jpg",
+                        "height": 75,
+                        "width": 75
+                    }
+                },
+                "news_desk": "Culture",
+                "print_page": "",
+                "print_section": "",
+                "pub_date": "2025-11-07T16:00:03Z",
+                "section_name": "Movies",
+                "snippet": "This month’s picks include a loner on the razor’s edge, a witch on a bloodthirsty mission and an actress walking a doomed path.",
+                "source": "The New York Times",
+                "subsection_name": "",
+                "type_of_material": "News",
+                "uri": "nyt://article/1e0f7aca-c62c-5192-9199-eb9cfdc6a0b7",
+                "web_url": "https://www.nytimes.com/2025/11/07/movies/five-horror-movies-to-stream-now.html",
+                "word_count": 983
+            },
+            {
+                "abstract": "Several audience members shouted or lit flares as the Israel Philharmonic Orchestra performed in Paris. After the concert, the ensemble received 10 minutes of applause and played the Israeli national anthem.",
+                "byline": {
+                    "original": "By Ségolène Le Stradic"
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "4 Arrested Over Disruption of Israeli Orchestra’s Concert",
+                    "kicker": "",
+                    "print_headline": ""
+                },
+                "_id": "nyt://article/3a14f450-435d-5cc4-806f-214e0a436ddc",
+                "keywords": [
+                    {
+                        "name": "Subject",
+                        "value": "Classical Music",
+                        "rank": 1
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Israel-Gaza War (2023- )",
+                        "rank": 2
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Demonstrations, Protests and Riots",
+                        "rank": 3
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "International Relations",
+                        "rank": 4
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Boycotts",
+                        "rank": 5
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "Israel Philharmonic Orchestra",
+                        "rank": 6
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Shani, Lahav",
+                        "rank": 7
+                    },
+                    {
+                        "name": "Location",
+                        "value": "Paris (France)",
+                        "rank": 8
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Anti-Semitism",
+                        "rank": 9
+                    }
+                ],
+                "multimedia": {
+                    "caption": "A small fire broke out in the concert hall after an audience member lit a flare during an Israel Philharmonic Orchestra performance in Paris on Thursday night.",
+                    "credit": "Rachel Sinai-Sinelnikoff",
+                    "default": {
+                        "url": "https://static01.nyt.com/images/2025/11/07/world/07cul-israel-paris-protest/07cul-israel-paris-protest-articleLarge.jpg",
+                        "height": 901,
+                        "width": 600
+                    },
+                    "thumbnail": {
+                        "url": "https://static01.nyt.com/images/2025/11/07/world/07cul-israel-paris-protest/07cul-israel-paris-protest-thumbStandard.jpg",
+                        "height": 75,
+                        "width": 75
+                    }
+                },
+                "news_desk": "Culture",
+                "print_page": "",
+                "print_section": "",
+                "pub_date": "2025-11-07T15:36:49Z",
+                "section_name": "Arts",
+                "snippet": "Several audience members shouted or lit flares as the Israel Philharmonic Orchestra performed in Paris. After the concert, the ensemble received 10 minutes of applause and played the Israeli national anthem.",
+                "source": "The New York Times",
+                "subsection_name": "Music",
+                "type_of_material": "News",
+                "uri": "nyt://article/3a14f450-435d-5cc4-806f-214e0a436ddc",
+                "web_url": "https://www.nytimes.com/2025/11/07/arts/music/israel-philharmonic-concert-arrests-france.html",
+                "word_count": 902
+            },
+            {
+                "abstract": "The moves to fire or sideline generals and admirals are without precedent in recent decades and have rattled the top brass.",
+                "byline": {
+                    "original": "By Greg Jaffe, Eric Schmitt and Helene Cooper"
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "Hegseth Is Purging Military Leaders With Little Explanation",
+                    "kicker": "",
+                    "print_headline": ""
+                },
+                "_id": "nyt://article/77b76710-5bfb-50d7-b64d-baca7bd2bdea",
+                "keywords": [
+                    {
+                        "name": "Subject",
+                        "value": "United States Defense and Military Forces",
+                        "rank": 1
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Brown, Charles Q Jr",
+                        "rank": 2
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Hegseth, Pete",
+                        "rank": 3
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Milley, Mark A",
+                        "rank": 4
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Trump, Donald J",
+                        "rank": 5
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "Joint Chiefs of Staff",
+                        "rank": 6
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "United States Navy",
+                        "rank": 7
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "United States Marine Corps",
+                        "rank": 8
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "Navy Seals",
+                        "rank": 9
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Appointments and Executive Changes",
+                        "rank": 10
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Caine, John Daniel (1968- )",
+                        "rank": 11
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Holsey, Alvin",
+                        "rank": 12
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Kruse, Jeffrey A (1968- )",
+                        "rank": 13
+                    },
+                    {
+                        "name": "Person",
+                        "value": "McKenzie, Kenneth F",
+                        "rank": 14
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Sims, Douglas A II",
+                        "rank": 15
+                    }
+                ],
+                "multimedia": {
+                    "caption": "",
+                    "credit": "Photographs by Andrew Caballero-Reynolds/Agence France-Presse — Getty Images; Kenny Holston/The New Times; Win McNamee/Getty Images; Jacquelyn Martin/Associated Press; Tom Williams/CQ-Roll Call, via Getty Images; Kevin Dietsch/Getty Images; Kent Nishimura for The New York Times; Andrew Harnik/Getty Images; ",
+                    "default": {
+                        "url": "https://static01.nyt.com/images/2025/11/06/us/politics/00dc-promotions-new-top/00dc-promotions-new-top-articleLarge.jpg",
+                        "height": 780,
+                        "width": 600
+                    },
+                    "thumbnail": {
+                        "url": "https://static01.nyt.com/images/2025/11/06/us/politics/00dc-promotions-new-top/00dc-promotions-new-top-thumbStandard.jpg",
+                        "height": 75,
+                        "width": 75
+                    }
+                },
+                "news_desk": "Washington",
+                "print_page": "",
+                "print_section": "",
+                "pub_date": "2025-11-07T15:34:07Z",
+                "section_name": "U.S.",
+                "snippet": "The moves to fire or sideline generals and admirals are without precedent in recent decades and have rattled the top brass.",
+                "source": "The New York Times",
+                "subsection_name": "Politics",
+                "type_of_material": "News",
+                "uri": "nyt://article/77b76710-5bfb-50d7-b64d-baca7bd2bdea",
+                "web_url": "https://www.nytimes.com/2025/11/07/us/politics/hegseth-firing-military-leaders.html",
+                "word_count": 1874
+            },
+            {
+                "abstract": "This Spanish pop star’s new album is being advertised as symphonic and operatic. Its music borrows from both, without committing to either.",
+                "byline": {
+                    "original": "By Joshua Barone"
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "Rosalía’s ‘Lux’ Is Operatic. But Is It Opera?",
+                    "kicker": "Critic’s Notebook",
+                    "print_headline": ""
+                },
+                "_id": "nyt://article/01172a91-8bf8-5e60-a5b9-ef1ece279147",
+                "keywords": [
+                    {
+                        "name": "Subject",
+                        "value": "Classical Music",
+                        "rank": 1
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Opera",
+                        "rank": 2
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Pop and Rock Music",
+                        "rank": 3
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Rosalia (Singer)",
+                        "rank": 4
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Shaw, Caroline",
+                        "rank": 5
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "London Symphony Orchestra",
+                        "rank": 6
+                    }
+                ],
+                "multimedia": {
+                    "caption": "Rosalía’s “Berghain” is the first single from her fourth album, “Lux.”",
+                    "credit": "Vevo",
+                    "default": {
+                        "url": "https://static01.nyt.com/images/2025/11/07/arts/07cul-rosalia-classical/07cul-rosalia-classical-articleLarge.jpg",
+                        "height": 366,
+                        "width": 600
+                    },
+                    "thumbnail": {
+                        "url": "https://static01.nyt.com/images/2025/11/07/arts/07cul-rosalia-classical/07cul-rosalia-classical-thumbStandard.jpg",
+                        "height": 75,
+                        "width": 75
+                    }
+                },
+                "news_desk": "Culture",
+                "print_page": "",
+                "print_section": "",
+                "pub_date": "2025-11-07T15:30:40Z",
+                "section_name": "Arts",
+                "snippet": "This Spanish pop star’s new album is being advertised as symphonic and operatic. Its music borrows from both, without committing to either.",
+                "source": "The New York Times",
+                "subsection_name": "Music",
+                "type_of_material": "News",
+                "uri": "nyt://article/01172a91-8bf8-5e60-a5b9-ef1ece279147",
+                "web_url": "https://www.nytimes.com/2025/11/07/arts/music/rosalia-lux-classical-music-opera.html",
+                "word_count": 847
+            },
+            {
+                "abstract": "A consummate political survivor during his country’s shift from brutal communist regime to flawed democracy, he served three stints as prime minister.",
+                "byline": {
+                    "original": "By Adam Nossiter"
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "Fatos Nano, Albanian Leader in Era of Chaos and Transition, Dies at 73",
+                    "kicker": "",
+                    "print_headline": "Fatos Nano, 73, Dies;  Leader of Albania In Era of Transition"
+                },
+                "_id": "nyt://article/23789b6d-d855-5502-9fd2-f6b7e6fe7cfe",
+                "keywords": [
+                    {
+                        "name": "Person",
+                        "value": "Nano, Fatos",
+                        "rank": 1
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Politics and Government",
+                        "rank": 2
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Deaths (Obituaries)",
+                        "rank": 3
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Communism (Theory and Philosophy)",
+                        "rank": 4
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Socialism (Theory and Philosophy)",
+                        "rank": 5
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Hoxha, Enver",
+                        "rank": 6
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Berisha, Sali",
+                        "rank": 7
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Hoxha, Nexhmije",
+                        "rank": 8
+                    },
+                    {
+                        "name": "Location",
+                        "value": "Albania",
+                        "rank": 9
+                    },
+                    {
+                        "name": "Location",
+                        "value": "Tirana (Albania)",
+                        "rank": 10
+                    }
+                ],
+                "multimedia": {
+                    "caption": "Fatos Nano in 2005. He led the Albanian Socialist Party from its founding in 1991 and served three times as his country’s prime minister.",
+                    "credit": "Visar Kryeziu/Associated Press",
+                    "default": {
+                        "url": "https://static01.nyt.com/images/2025/11/08/multimedia/05nano-pwqv-print1/05nano-pwqv-articleLarge.jpg",
+                        "height": 439,
+                        "width": 600
+                    },
+                    "thumbnail": {
+                        "url": "https://static01.nyt.com/images/2025/11/08/multimedia/05nano-pwqv-print1/05nano-pwqv-thumbStandard.jpg",
+                        "height": 75,
+                        "width": 75
+                    }
+                },
+                "news_desk": "Obits",
+                "print_page": "",
+                "print_section": "",
+                "pub_date": "2025-11-07T14:48:15Z",
+                "section_name": "World",
+                "snippet": "A consummate political survivor during his country’s shift from brutal communist regime to flawed democracy, he served three stints as prime minister.",
+                "source": "The New York Times",
+                "subsection_name": "Europe",
+                "type_of_material": "Obituary (Obit)",
+                "uri": "nyt://article/23789b6d-d855-5502-9fd2-f6b7e6fe7cfe",
+                "web_url": "https://www.nytimes.com/2025/11/07/world/europe/fatos-nano-dead.html",
+                "word_count": 1425
+            },
+            {
+                "abstract": "The appeal comes one day after a judge sharply attacked the White House for politicizing the anti-hunger program.",
+                "byline": {
+                    "original": "By Tony Romm"
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "Trump Administration Seeks Immediate Halt to Court Order to Pay Food Stamps",
+                    "kicker": "",
+                    "print_headline": ""
+                },
+                "_id": "nyt://article/645da229-f942-5e05-af72-7f6a0ac070b7",
+                "keywords": [
+                    {
+                        "name": "Subject",
+                        "value": "United States Politics and Government",
+                        "rank": 1
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Poverty",
+                        "rank": 2
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Food Stamps",
+                        "rank": 3
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Federal Aid (US)",
+                        "rank": 4
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Food Insecurity",
+                        "rank": 5
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "Justice Department",
+                        "rank": 6
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Trump, Donald J",
+                        "rank": 7
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Federal Courts (US)",
+                        "rank": 8
+                    }
+                ],
+                "multimedia": {
+                    "caption": "The Supplemental Nutrition Assistance Program, also known as SNAP or food stamps, provides aid to about one in eight Americans.",
+                    "credit": "Hiroko Masuike/The New York Times",
+                    "default": {
+                        "url": "https://static01.nyt.com/images/2025/11/07/multimedia/07dc-snap-mzfp/07dc-snap-mzfp-articleLarge.jpg",
+                        "height": 400,
+                        "width": 600
+                    },
+                    "thumbnail": {
+                        "url": "https://static01.nyt.com/images/2025/11/07/multimedia/07dc-snap-mzfp/07dc-snap-mzfp-thumbStandard.jpg",
+                        "height": 75,
+                        "width": 75
+                    }
+                },
+                "news_desk": "Washington",
+                "print_page": "",
+                "print_section": "",
+                "pub_date": "2025-11-07T14:40:24Z",
+                "section_name": "U.S.",
+                "snippet": "The appeal comes one day after a judge sharply attacked the White House for politicizing the anti-hunger program.",
+                "source": "The New York Times",
+                "subsection_name": "Politics",
+                "type_of_material": "News",
+                "uri": "nyt://article/645da229-f942-5e05-af72-7f6a0ac070b7",
+                "web_url": "https://www.nytimes.com/2025/11/07/us/politics/trump-court-food-stamps.html",
+                "word_count": 832
+            },
+            {
+                "abstract": "The election of Zohran Mamdani as mayor has stoked speculation that President Trump might move to send forces into the city.",
+                "byline": {
+                    "original": "By Luis Ferré-Sadurní and Dana Rubinstein"
+                },
+                "document_type": "article",
+                "headline": {
+                    "main": "New York Prepares for a Potential Trump Immigration Crackdown",
+                    "kicker": "",
+                    "print_headline": ""
+                },
+                "_id": "nyt://article/be69886e-23db-5283-9764-a515b27b9f9b",
+                "keywords": [
+                    {
+                        "name": "Subject",
+                        "value": "Illegal Immigration",
+                        "rank": 1
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "United States Politics and Government",
+                        "rank": 2
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Federal Actions in US Cities",
+                        "rank": 3
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Police",
+                        "rank": 4
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Immigration and Emigration",
+                        "rank": 5
+                    },
+                    {
+                        "name": "Subject",
+                        "value": "Local Government",
+                        "rank": 6
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "Border Patrol (US)",
+                        "rank": 7
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "Homeland Security and Emergency Services (NYS)",
+                        "rank": 8
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "Immigration and Customs Enforcement (US)",
+                        "rank": 9
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "National Guard",
+                        "rank": 10
+                    },
+                    {
+                        "name": "Organization",
+                        "value": "Partnership for New York City",
+                        "rank": 11
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Mamdani, Zohran",
+                        "rank": 12
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Trump, Donald J",
+                        "rank": 13
+                    },
+                    {
+                        "name": "Person",
+                        "value": "Adams, Eric L",
+                        "rank": 14
+                    },
+                    {
+                        "name": "Location",
+                        "value": "Canal Street (Manhattan, NY)",
+                        "rank": 15
+                    },
+                    {
+                        "name": "Location",
+                        "value": "New York City",
+                        "rank": 16
+                    },
+                    {
+                        "name": "Location",
+                        "value": "New York State",
+                        "rank": 17
+                    }
+                ],
+                "multimedia": {
+                    "caption": "Protesters chased federal officers after street raids in Lower Manhattan last month. Some city leaders fear that the raid was an example of actions to come.",
+                    "credit": "Victor J. Blue for The New York Times",
+                    "default": {
+                        "url": "https://static01.nyt.com/images/2025/11/06/multimedia/met-immigration-crackdown-btfw/met-immigration-crackdown-btfw-articleLarge.jpg",
+                        "height": 400,
+                        "width": 600
+                    },
+                    "thumbnail": {
+                        "url": "https://static01.nyt.com/images/2025/11/06/multimedia/met-immigration-crackdown-btfw/met-immigration-crackdown-btfw-thumbStandard.jpg",
+                        "height": 75,
+                        "width": 75
+                    }
+                },
+                "news_desk": "Metro",
+                "print_page": "",
+                "print_section": "",
+                "pub_date": "2025-11-07T14:20:37Z",
+                "section_name": "New York",
+                "snippet": "The election of Zohran Mamdani as mayor has stoked speculation that President Trump might move to send forces into the city.",
+                "source": "The New York Times",
+                "subsection_name": "",
+                "type_of_material": "News",
+                "uri": "nyt://article/be69886e-23db-5283-9764-a515b27b9f9b",
+                "web_url": "https://www.nytimes.com/2025/11/07/nyregion/nyc-immigration-raids-trump-mamdani.html",
+                "word_count": 1728
+            }
+        ],
+        "metadata": {
+            "hits": 10000,
+            "offset": 0,
+            "time": 380
+        }
+    }
+}

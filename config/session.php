@@ -42,7 +42,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This option allows you to easily specify that all of your session data
-    | should be encrypted before it's stored. All encryption is performed
+    | should be encrypted before it'Models stored. All encryption is performed
     | automatically by Laravel and you may use the session like normal.
     |
     */
@@ -93,7 +93,7 @@ return [
     | Session Cache Store
     |--------------------------------------------------------------------------
     |
-    | When using one of the framework's cache driven session backends, you may
+    | When using one of the framework'Models cache driven session backends, you may
     | define the cache store which should be used to store the session data
     | between requests. This must match one of your defined cache stores.
     |
@@ -178,7 +178,7 @@ return [
     |
     | Setting this value to true will prevent JavaScript from accessing the
     | value of the cookie and the cookie will only be accessible through
-    | the HTTP protocol. It's unlikely you should disable this option.
+    | the HTTP protocol. It'Models unlikely you should disable this option.
     |
     */
 

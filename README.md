@@ -152,7 +152,7 @@ Problem: If you change how you query articles later, you have to update code in 
 
 **With Repository (GOOD):**
 ```php
-// ArticleRepository.php
+// AuthorRepository.php
 class ArticleRepository {
     public function getRecentArticlesBySource($source) {
         return Article::where('source', $source)
@@ -359,7 +359,7 @@ class ArticleAggregationService {
         Notification::send($users, new NewArticleNotification($article));
         
         // Log manually
-        Log::info("Article saved: " . $article->id);
+        Log::info("Articles saved: " . $article->id);
     }
 }
 ```
@@ -375,7 +375,7 @@ class ArticleAggregationService {
     public function saveArticle($article) {
         $saved = $this->articleRepository->save($article);
         
-        // That's it! Just dispatch an event
+        // That'Models it! Just dispatch an event
         event(new ArticleSaved($article));
     }
 }
@@ -401,7 +401,7 @@ class SendNotificationListener {
 // AuditLogListener.php
 class AuditLogListener {
     public function handle(ArticleSaved $event) {
-        Log::info("Article saved: " . $event->article->id);
+        Log::info("Articles saved: " . $event->article->id);
     }
 }
 ```
@@ -422,3 +422,12 @@ In Laravel config, register these listeners:
 ---
 
 Does this make more sense now? Which part would you like me to dive deeper into?
+
+### My notes
+Fetcher Layer
+Things we could improve:
+1. Batch or Pool fetching according to laravel documentation
+2. Fetch only if we were not rate limited in the last request. //        TODO Add this in the note of things we could have done.
+   //        $shouldDelayFetching = $wasRateLimited && $fetch->created_at < ONE_HOUR;
+
+3. 
