@@ -6,6 +6,7 @@ use App\Domain\Sources\Fetchers\FetcherStrategyInterface;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Http;
 use App\Models\Fetch;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Psr\Http\Message\StreamInterface;
@@ -23,6 +24,8 @@ class NyTimesStrategy extends BaseStrategy implements FetcherStrategyInterface
     {
         $config = $this->getFetchConfig('nytimes');
 
+        Log::debug("NYTimes config " . print_r($config, true));
+
         $retryAfter = $config['retryAfter'];
         $nextPage = $config['nextPage'];
         $sourceId = $config['sourceId'];
@@ -32,6 +35,8 @@ class NyTimesStrategy extends BaseStrategy implements FetcherStrategyInterface
                                 'api-key' => env('NYTIMES_API_KEY'),
                                 'page' => $nextPage
                             ]);
+
+        Log::debug("Response status is " . $response->status());
 
         if (!$response->ok()) {
             Log::debug('A non okay response was received, see the headers ' . print_r($response->headers(), true));
@@ -59,19 +64,22 @@ class NyTimesStrategy extends BaseStrategy implements FetcherStrategyInterface
     private function processTags(array $tags): array
     {
         return array_map(fn ($tag) => [
-            'name' => $tag['name'],
-            'slug' => Str::slug($tag['name']),
+            'name' => $tag['value'],
+            'slug' => Str::slug($tag['value']),
         ], $tags);
     }
 
     protected function processAuthors(string $author, $sourceId): array
     {
         $normalized = trim($author, "By");
-        str_replace("and", ",", $normalized);
+        $normalized = str_replace("and", ",", $normalized);
         $normalized = explode(",", $normalized);
 
         return array_map(function ($author) use ($sourceId) {
-            [$firstname, $lastname] = explode(" ", $author);
+            $names = explode(" ", $author);
+
+            $firstname = isset($names[0]) ? trim($names[0]) : '';
+            $lastname = isset($names[1]) ? trim($names[1]) : '';
 
             return [
                 'firstname' => $firstname,
@@ -85,10 +93,19 @@ class NyTimesStrategy extends BaseStrategy implements FetcherStrategyInterface
     {
         $media = [];
 
-        $media[] = [
-            'url' => $elements['default']['url'],
-            'alt' => $elements['caption']
-        ];
+        if (empty($elements) || !is_array($elements)) {
+            return $media;
+        }
+
+        $url = $elements['default']['url'] ?? null;
+        $caption = $elements['caption'] ?? null;
+
+        if ($url) {
+            $media[] = [
+                'url' => $url,
+                'alt' => $caption
+            ];
+        }
 
         return $media;
     }

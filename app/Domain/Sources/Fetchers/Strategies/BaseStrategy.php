@@ -21,8 +21,8 @@ abstract class BaseStrategy
         if (!$source) {
             Log::debug("Source not found for source name $sourceName");
             return array(
-                'retryAfter' => null,
-                'nextPage' => null,
+                'retryAfter' => self::ONE_HOUR_IN_MILLISECOND,
+                'nextPage' => 1,
                 'sourceId' => null,
             );
         }
@@ -41,7 +41,7 @@ abstract class BaseStrategy
             $shouldFetchMore = $totalPages > $pagesFetched;
             $nextPage = $pagesFetched + 1;
         } else {
-            $nextPage = 0;
+            $nextPage = 1;
             $retryAfter = self::ONE_HOUR_IN_MILLISECOND;
         }
 

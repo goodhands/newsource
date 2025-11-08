@@ -3,18 +3,28 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Domain\Articles\Models\Article;
+use App\Domain\Articles\Repositories\ArticleRepositoryInterface;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreArticleRequest;
-use App\Http\Requests\UpdateArticleRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ArticleController extends Controller
 {
+    public function __construct(
+        protected ArticleRepositoryInterface $articleRepository
+    )
+    {
+    }
+
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $search = $request->query('search');
+        $filter = $request->query('filter');
+
+        return $this->articleRepository->all();
     }
 
     /**
@@ -36,9 +46,14 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Article $article)
+    public function show(Request $request, $id)
     {
-        //
+        $include = $request->query('include');
+        $include = $include ? explode(',', $include) : [];
+
+        $article = $this->articleRepository->getById($id, $include);
+
+        return $article;
     }
 
     /**

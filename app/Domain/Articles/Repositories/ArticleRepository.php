@@ -49,11 +49,11 @@ class ArticleRepository implements ArticleRepositoryInterface
 //        can filter by author
     }
 
-    public function all(array $filters = []): array
+    public function all(array $filters = [])
     {
 //        TODO: Implement filter
         if (empty($filters)) {
-            return Article::all();
+            return Article::paginate();
         }
 
         return Article::where($filters)->get();
@@ -61,7 +61,6 @@ class ArticleRepository implements ArticleRepositoryInterface
 
     public function persist(array $articles): Collection
     {
-        Log::info("Persisting " . count($articles) . " articles");
         return collect($articles)->map(fn ($article) => $this->persistSingleArticle($article));
     }
 
@@ -72,8 +71,6 @@ class ArticleRepository implements ArticleRepositoryInterface
         $article = $this->create($articleData);
 
         $this->attachRelationships($article, $related);
-
-//        Maybe dispatch event here
 
         return $article;
     }
@@ -101,22 +98,28 @@ class ArticleRepository implements ArticleRepositoryInterface
         }
 
         if ($related['media']) {
-            Log::debug("media is " . print_r($related['media'], true));
             $article->media()->createMany($related['media']);
         }
 
         if ($related['categories']) {
-            $article->categories()->create($related['categories']);
+            $categoryIds = $this->categoryRepository->persist($related['categories']);
+            $article->categories()->sync($categoryIds);
         }
 
         if ($related['tags']) {
-            $article->tags()->createMany($related['tags']);
+            $tagIds = $this->tagRepository->persist($related['tags']);
+            $article->tags()->sync($tagIds);
         }
     }
 
-    public function getById(int $id): Article
+    public function getById(int $id, $include = []): Article
     {
-        // TODO: Implement getById() method.
+        // Filter $include array to return only supported includes
+        $relationships = ['authors', 'tags', 'categories', 'media'];
+
+        $loadRelationships = array_intersect($include, $relationships);
+
+        return Article::with($loadRelationships)->findOrFail($id);
     }
 
     public function create(array $articleData): Article

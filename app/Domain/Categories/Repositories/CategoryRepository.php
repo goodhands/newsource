@@ -4,6 +4,7 @@ namespace App\Domain\Categories\Repositories;
 
 use App\Domain\Articles\Models\Article;
 use App\Domain\Categories\Models\Category;
+use Illuminate\Support\Facades\Log;
 
 class CategoryRepository implements CategoryRepositoryInterface
 {
@@ -12,17 +13,19 @@ class CategoryRepository implements CategoryRepositoryInterface
     }
 
     /**
-     * Create a new category
+     * Create new categories
      *
      * @param array $categories
      * @return array
      */
-    public function persist(array $categories): array
+    public function persist(array $category): array
     {
-        $category = Category::firstOrCreate($categories);
+        Log::debug('Persisting category: ' . print_r($category, true));
+        $category = Category::firstOrCreate(
+            ['name' => $category['name']],
+            ['slug' => $category['slug']]
+        );
 
-        $category->save();
-
-        return $category->toArray();
+        return [$category->id];
     }
 }
