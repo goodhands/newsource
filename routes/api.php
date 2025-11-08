@@ -19,6 +19,7 @@ Route::post('/tokens/create', function (Request $request) {
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/articles', [ArticleController::class, 'index']);
-
     Route::get('/articles/{id}', [ArticleController::class, 'show']);
+    Route::get('/user/preferences', [UserController::class, 'getPreferences']);
+    Route::put('/user/preferences', [UserController::class, 'updatePreferences']);
 });

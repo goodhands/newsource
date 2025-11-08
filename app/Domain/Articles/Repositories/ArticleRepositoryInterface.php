@@ -3,6 +3,8 @@
 namespace App\Domain\Articles\Repositories;
 
 use App\Domain\Articles\Models\Article;
+use App\Models\User;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
 interface ArticleRepositoryInterface
@@ -25,11 +27,14 @@ interface ArticleRepositoryInterface
     public function persist(array $articles): Collection;
 
     /**
-     * Get all articles, optionally filtered by criteria
+     * Get all articles with search, filters, and eager loading
      *
-     * @param array $filters
-     *
-     * @return mixed
+     * @param string|null $search Search term for title, description, content
+     * @param array $filters Filtering criteria (date_from, date_to, source, category, author, tag)
+     * @param array $include Relationships to eager load (source, authors, categories, tags, media)
+     * @param int $perPage Number of items per page
+     * @param User|null $user User for applying preference-based filtering
+     * @return LengthAwarePaginator
      */
-    public function all(array $filters = []);
+    public function all(?string $search = null, array $filters = [], array $include = [], int $perPage = 15, ?User $user = null): LengthAwarePaginator;
 }

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Api\v1;
 
-use App\Domain\Articles\Models\Article;
 use App\Domain\Articles\Repositories\ArticleRepositoryInterface;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\IndexArticleRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class ArticleController extends Controller
 {
@@ -19,28 +18,23 @@ class ArticleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index(IndexArticleRequest $request)
     {
         $search = $request->query('search');
-        $filter = $request->query('filter');
 
-        return $this->articleRepository->all();
-    }
+        $filters = $request->query('filter', []);
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        $include = $request->query('include');
+        $include = $include ? explode(',', $include) : [];
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreArticleRequest $request)
-    {
-        //
+        $perPage = (int) $request->query('per_page', 15);
+        $perPage = min(max($perPage, 1), 100);
+
+        $user = $request->user();
+
+        $articles = $this->articleRepository->all($search, $filters, $include, $perPage, $user);
+
+        return $articles;
     }
 
     /**
@@ -54,29 +48,5 @@ class ArticleController extends Controller
         $article = $this->articleRepository->getById($id, $include);
 
         return $article;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Article $article)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateArticleRequest $request, Article $article)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Article $article)
-    {
-        //
     }
 }

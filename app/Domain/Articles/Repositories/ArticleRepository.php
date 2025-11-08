@@ -7,9 +7,10 @@ use App\Domain\Authors\Repositories\AuthorRepositoryInterface;
 use App\Domain\Categories\Repositories\CategoryRepositoryInterface;
 use App\Domain\Media\Repositories\MediaRepositoryInterface;
 use App\Domain\Tags\Repositories\TagRepositoryInterface;
+use App\Models\User;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Log;
 
 class ArticleRepository implements ArticleRepositoryInterface
 {
@@ -30,33 +31,130 @@ class ArticleRepository implements ArticleRepositoryInterface
     }
 
     /**
-     * Search the articles collection
+     * Get all articles with search, filters, and eager loading
      *
-     * @param string $keyword
-     * @return array
+     * @param string|null $search
+     * @param array $filters
+     * @param array $include
+     * @param int $perPage
+     * @param User|null $user
+     * @return LengthAwarePaginator
      */
-    public function search(string $keyword): array
+    public function all(?string $search = null, array $filters = [], array $include = [], int $perPage = 15, ?User $user = null): LengthAwarePaginator
     {
-//        TODO:  Improve search query
-        return Article::where('title', 'like', '%' . $keyword . '%')->get();
-    }
+        $query = Article::query();
 
-    public function filter(array $filters): array
-    {
-//        TODO: Implement filter
-//        can filter by single category or array of categories
-//        can filter by date
-//        can filter by author
-    }
-
-    public function all(array $filters = [])
-    {
-//        TODO: Implement filter
-        if (empty($filters)) {
-            return Article::paginate();
+        if ($user && $user->preferences) {
+            $this->applyUserPreferences($query, $user->preferences);
         }
 
-        return Article::where($filters)->get();
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                  ->orWhere('description', 'like', "%{$search}%")
+                  ->orWhere('content', 'like', "%{$search}%");
+            });
+        }
+
+        $this->applyFilters($query, $filters);
+
+        $this->applyIncludes($query, $include);
+
+        $query->orderBy('published_at', 'desc');
+
+        return $query->paginate($perPage);
+    }
+
+    /**
+     * Apply filters to the query
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param array $filters
+     * @return void
+     */
+    private function applyFilters($query, array $filters): void
+    {
+        if (isset($filters['date_from'])) {
+            $query->whereDate('published_at', '>=', $filters['date_from']);
+        }
+
+        if (isset($filters['date_to'])) {
+            $query->whereDate('published_at', '<=', $filters['date_to']);
+        }
+
+        if (isset($filters['source'])) {
+            $query->whereHas('source', function ($q) use ($filters) {
+                if (is_numeric($filters['source'])) {
+                    $q->where('id', $filters['source']);
+                } else {
+                    $q->where('name', 'like', "%{$filters['source']}%");
+                }
+            });
+        }
+
+        if (isset($filters['category'])) {
+            $query->whereHas('categories', function ($q) use ($filters) {
+                $q->where('slug', $filters['category'])
+                  ->orWhere('name', 'like', "%{$filters['category']}%");
+            });
+        }
+
+        if (isset($filters['author'])) {
+            $query->whereHas('authors', function ($q) use ($filters) {
+                $q->where('firstname', 'like', "%{$filters['author']}%")
+                  ->orWhere('lastname', 'like', "%{$filters['author']}%");
+            });
+        }
+
+        if (isset($filters['tag'])) {
+            $query->whereHas('tags', function ($q) use ($filters) {
+                $q->where('slug', $filters['tag'])
+                  ->orWhere('name', 'like', "%{$filters['tag']}%");
+            });
+        }
+    }
+
+    /**
+     * Apply eager loading to the query
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param array $include
+     * @return void
+     */
+    private function applyIncludes($query, array $include): void
+    {
+        $validRelationships = ['source', 'authors', 'tags', 'categories', 'media'];
+        $loadRelationships = array_intersect($include, $validRelationships);
+
+        if (!empty($loadRelationships)) {
+            $query->with($loadRelationships);
+        }
+    }
+
+    /**
+     * Apply user preferences to the query
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param array $preferences
+     * @return void
+     */
+    private function applyUserPreferences($query, array $preferences): void
+    {
+        if (isset($preferences['sources']) && !empty($preferences['sources'])) {
+            $query->whereIn('source_id', $preferences['sources']);
+        }
+
+        if (isset($preferences['categories']) && !empty($preferences['categories'])) {
+            $query->whereHas('categories', function ($q) use ($preferences) {
+                $q->whereIn('categories.id', $preferences['categories']);
+            });
+        }
+
+        if (isset($preferences['authors']) && !empty($preferences['authors'])) {
+            $query->whereHas('authors', function ($q) use ($preferences) {
+                $q->whereIn('authors.id', $preferences['authors']);
+            });
+        }
     }
 
     public function persist(array $articles): Collection
@@ -114,8 +212,7 @@ class ArticleRepository implements ArticleRepositoryInterface
 
     public function getById(int $id, $include = []): Article
     {
-        // Filter $include array to return only supported includes
-        $relationships = ['authors', 'tags', 'categories', 'media'];
+        $relationships = ['source', 'authors', 'tags', 'categories', 'media'];
 
         $loadRelationships = array_intersect($include, $relationships);
 
