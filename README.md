@@ -1,5 +1,3 @@
-![Project Architecture](database-structure.png)
-
 ### News Aggregator API
 This project features APIs for accessing news from various sources including NewYorkTimes, Guardian, and BBC (through NewsAPI.org)!
 
@@ -65,3 +63,4 @@ This will perform some checks to make sure it's not fetching duplicate articles 
 This command has also been scheduled to run hourly to fetch new articles from these sources. You will need to configure a cron job to run every the `php artisan schedule:run` command every minute to get this working.
 
 ### Database design
+![Project Architecture](database-structure.png)
