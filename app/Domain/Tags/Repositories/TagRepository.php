@@ -3,18 +3,12 @@
 namespace App\Domain\Tags\Repositories;
 
 use App\Domain\Tags\Models\Tag;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class TagRepository implements TagRepositoryInterface
 {
     public function __construct()
     {
-    }
-
-    public function getRecentArticlesBySource(string $source): array
-    {
-        return Article::where('source', $source)
-                        ->orderBy('id', 'desc')
-                        ->get();
     }
 
     /**
@@ -35,5 +29,15 @@ class TagRepository implements TagRepositoryInterface
             $tagIds[] = $tag->id;
         }
         return $tagIds;
+    }
+
+    /**
+     * Get all tags
+     *
+     * @return LengthAwarePaginator
+     */
+    public function all(): LengthAwarePaginator
+    {
+        return Tag::orderBy('name', 'asc')->paginate();
     }
 }

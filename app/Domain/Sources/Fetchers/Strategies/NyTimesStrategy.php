@@ -5,11 +5,8 @@ namespace App\Domain\Sources\Fetchers\Strategies;
 use App\Domain\Sources\Fetchers\FetcherStrategyInterface;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Http;
-use App\Models\Fetch;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
-use Psr\Http\Message\StreamInterface;
 
 class NyTimesStrategy extends BaseStrategy implements FetcherStrategyInterface
 {
@@ -24,11 +21,15 @@ class NyTimesStrategy extends BaseStrategy implements FetcherStrategyInterface
     {
         $config = $this->getFetchConfig('nytimes');
 
-        Log::debug("NYTimes config " . print_r($config, true));
-
         $retryAfter = $config['retryAfter'];
         $nextPage = $config['nextPage'];
         $sourceId = $config['sourceId'];
+        $shouldSkip = $config['shouldSkip'];
+
+        if ($shouldSkip) {
+            Log::warning('NYTimes: Skipping fetch due to rate limiting');
+            return [];
+        }
 
         $response = Http::retry(3, $retryAfter)
                             ->get(self::BASE_URL, [
@@ -36,15 +37,32 @@ class NyTimesStrategy extends BaseStrategy implements FetcherStrategyInterface
                                 'page' => $nextPage
                             ]);
 
-        Log::debug("Response status is " . $response->status());
+        $data = $response->json();
+        $articles = [];
+        $totalPages = 0;
 
-        if (!$response->ok()) {
-            Log::debug('A non okay response was received, see the headers ' . print_r($response->headers(), true));
+        if ($response->ok() && isset($data['response']['docs'])) {
+            $articles = $data['response']['docs'];
+            $totalHits = $data['response']['metadata']['hits'] ?? 0;
+            $totalPages = $totalHits > 0 ? (int) ceil($totalHits / 10) : 0;
+        } else {
+            Log::debug('NYTimes: Non-OK response received', [
+                'status' => $response->status(),
+                'headers' => $response->headers()
+            ]);
         }
 
-        $data = $response->json();
+        $this->saveFetchResult(
+            $sourceId,
+            $response,
+            count($articles),
+            $nextPage,
+            $totalPages
+        );
 
-        $articles = $data['response']['docs'];
+        if (empty($articles)) {
+            return [];
+        }
 
         return array_map(fn ($article) => [
             'title' => $article['headline']['main'],

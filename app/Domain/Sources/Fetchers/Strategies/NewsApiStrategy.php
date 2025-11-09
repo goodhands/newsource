@@ -21,6 +21,12 @@ class NewsApiStrategy extends BaseStrategy implements FetcherStrategyInterface
         $config = $this->getFetchConfig('newsapi');
         $nextPage = $config['nextPage'];
         $sourceId = $config['sourceId'];
+        $shouldSkip = $config['shouldSkip'];
+
+        if ($shouldSkip) {
+            Log::warning('NewsAPI: Skipping fetch due to rate limiting');
+            return [];
+        }
 
         $apiKey = env('NEWS_API_KEY');
         if (empty($apiKey)) {
@@ -28,6 +34,7 @@ class NewsApiStrategy extends BaseStrategy implements FetcherStrategyInterface
             return [];
         }
 
+        $pageSize = 10;
         $response = Http::timeout(30)
             ->retry(3, 1000)
             ->get(self::BASE_URL, [
@@ -36,27 +43,38 @@ class NewsApiStrategy extends BaseStrategy implements FetcherStrategyInterface
                 'excludeDomains' => 'theguardian.com,nytimes.com',
                 'domains' => 'bbc.co.uk,bbc.com',
                 'language' => 'en',
-                'pageSize' => 10,
+                'pageSize' => $pageSize,
                 'page' => $nextPage,
                 'sortBy' => 'publishedAt'
             ]);
 
-        if (!$response->ok()) {
+        $data = $response->json();
+        $articles = [];
+        $totalPages = 0;
+
+        if ($response->ok() && isset($data['articles'])) {
+            $articles = $data['articles'];
+            $totalResults = $data['totalResults'] ?? 0;
+            $totalPages = $totalResults > 0 ? (int) ceil($totalResults / $pageSize) : 0;
+        } else {
             Log::error('NewsAPI request failed', [
                 'status' => $response->status(),
                 'headers' => $response->headers(),
                 'body' => $response->body()
             ]);
-            return [];
         }
 
-        $data = $response->json();
+        $this->saveFetchResult(
+            $sourceId,
+            $response,
+            count($articles),
+            $nextPage,
+            $totalPages
+        );
 
-        if (!isset($data['articles']) || empty($data['articles'])) {
+        if (empty($articles)) {
             return [];
         }
-
-        $articles = $data['articles'];
 
         return array_map(fn ($article) => [
             'title' => $article['title'],

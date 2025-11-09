@@ -2,8 +2,9 @@
 
 namespace App\Domain\Authors\Repositories;
 
-use App\Domain\Articles\Models\Article;
 use App\Domain\Authors\Models\Author;
+use Illuminate\Support\Collection;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class AuthorRepository implements AuthorRepositoryInterface
 {
@@ -18,10 +19,8 @@ class AuthorRepository implements AuthorRepositoryInterface
         })->toArray();
     }
 
-    public function getRecentArticlesBySource(string $source): array
+    public function all(): LengthAwarePaginator
     {
-        return Article::where('source', $source)
-                        ->orderBy('id', 'desc')
-                        ->get();
+        return Author::orderBy('id', 'desc')->paginate();
     }
 }

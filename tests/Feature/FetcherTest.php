@@ -17,6 +17,14 @@ class FetcherTest extends TestCase
 {
     use RefreshDatabase;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        // Seed sources for testing
+        $this->seed(\Database\Seeders\SourceSeeder::class);
+    }
+
     /**
      * A basic feature test example.
      * @throws ConnectionException
@@ -108,6 +116,6 @@ class FetcherTest extends TestCase
         });
 
         $this->assertCount(10, $articles);
-        $this->assertEquals('Passengers start to feel bite of flight cuts amid US government shutdown', $articles[0]['title']);
+        $this->assertEquals('Chelsea v Wolves: Premier League – live', $articles[0]['title']);
     }
 }

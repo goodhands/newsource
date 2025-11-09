@@ -3,7 +3,6 @@
 namespace App\Domain\Sources\Fetchers\Strategies;
 
 use App\Domain\Sources\Fetchers\FetcherStrategyInterface;
-use App\Models\Fetch;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -23,6 +22,12 @@ class GuardianStrategy extends BaseStrategy implements FetcherStrategyInterface
 
         $nextPage = $config['nextPage'];
         $sourceId = $config['sourceId'];
+        $shouldSkip = $config['shouldSkip'];
+
+        if ($shouldSkip) {
+            Log::warning('Guardian: Skipping fetch due to rate limiting');
+            return [];
+        }
 
         $apiKey = env('GUARDIAN_API_KEY');
         try {
@@ -40,13 +45,32 @@ class GuardianStrategy extends BaseStrategy implements FetcherStrategyInterface
             return [];
         }
 
-        if (!$response->ok()) {
-            Log::debug('A non okay response was received, see the headers ' . print_r($response->headers(), true));
+        $data = $response->json();
+        $articles = [];
+        $totalPages = 0;
+
+        if ($response->ok() && isset($data['response']['results'])) {
+            $articles = $data['response']['results'];
+
+            $totalPages = $data['response']['pages'] ?? 0;
+        } else {
+            Log::debug('Guardian: Non-OK response received', [
+                'status' => $response->status(),
+                'headers' => $response->headers()
+            ]);
         }
 
-        $data = $response->json();
+        $this->saveFetchResult(
+            $sourceId,
+            $response,
+            count($articles),
+            $nextPage,
+            $totalPages
+        );
 
-        $articles = $data['response']['results'];
+        if (empty($articles)) {
+            return [];
+        }
 
         return array_map(fn ($article) => [
             'title' => $article['webTitle'],
@@ -101,7 +125,6 @@ class GuardianStrategy extends BaseStrategy implements FetcherStrategyInterface
     {
         $media = [];
 
-        // First try to get images from elements
         foreach ($elements as $element) {
             if ($element['type'] === 'image' && isset($element['assets'])) {
                 foreach ($element['assets'] as $asset) {
@@ -110,16 +133,15 @@ class GuardianStrategy extends BaseStrategy implements FetcherStrategyInterface
                             'url' => $asset['file'],
                             'alt' => $asset['typeData']['altText'] ?? ''
                         ];
-                        break; // Only take the first asset
+                        break;
                     }
                 }
                 if (!empty($media)) {
-                    break; // Only take the first element with assets
+                    break;
                 }
             }
         }
 
-        // If no elements media found, use thumbnail as fallback
         if (empty($media) && isset($fields['thumbnail'])) {
             $media[] = [
                 'url' => $fields['thumbnail'],

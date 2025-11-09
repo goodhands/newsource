@@ -5,6 +5,7 @@ namespace App\Domain\Categories\Repositories;
 use App\Domain\Articles\Models\Article;
 use App\Domain\Categories\Models\Category;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class CategoryRepository implements CategoryRepositoryInterface
 {
@@ -27,5 +28,15 @@ class CategoryRepository implements CategoryRepositoryInterface
         );
 
         return [$category->id];
+    }
+
+    /**
+     * Get all categories
+     *
+     * @return LengthAwarePaginator
+     */
+    public function all(): LengthAwarePaginator
+    {
+        return Category::orderBy('name', 'asc')->paginate();
     }
 }

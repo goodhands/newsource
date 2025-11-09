@@ -12,6 +12,8 @@ use App\Domain\Articles\Repositories\ArticleRepository;
 use App\Domain\Articles\Repositories\ArticleRepositoryInterface;
 use App\Domain\Authors\Repositories\AuthorRepository;
 use App\Domain\Authors\Repositories\AuthorRepositoryInterface;
+use App\Domain\Fetches\Repositories\FetchRepositoryInterface;
+use App\Domain\Sources\Fetchers\Strategies\BaseStrategy;
 use App\Domain\Tags\Repositories\TagRepository;
 use App\Domain\Tags\Repositories\TagRepositoryInterface;
 
@@ -52,6 +54,11 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             TagRepositoryInterface::class,
             TagRepository::class
+        );
+
+        $this->app->bind(
+            FetchRepositoryInterface::class,
+            BaseStrategy::class
         );
     }
 
