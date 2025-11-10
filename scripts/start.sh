@@ -14,6 +14,9 @@ php artisan migrate --force
 echo "Seeding database"
 php artisan db:seed --force
 
+echo "Fetching initial articles"
+php artisan articles:fetch
+
 # Start scheduler & queue worker
 echo "Starting scheduler and queue worker..."
 nohup php artisan schedule:work > /dev/null 2>&1 &
