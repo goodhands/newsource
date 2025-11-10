@@ -53,6 +53,17 @@ Repository: Allows us to separate our business logic from our application logic
 Strategy: Allows us to implement aggregate news from various sources using dedicated strategies for each source
 
 ### Fetching new articles
+Before fetching new articles, you need to provide the following environment variables:
+```
+GUARDIAN_API_KEY=
+NYTIMES_API_KEY=
+NEWS_API_KEY=
+```
+These API keys can be gotten from the following URLs:
+1. [NYTimes](https://developer.nytimes.com/docs/archive-product/1/overview)
+2. [NewsAPI.org](https://newsapi.org/docs/get-started)
+3. [Guardian](https://open-platform.theguardian.com/documentation/)
+
 To fetch new articles from all sources, run the artisan command:
 ```
 php artisan articles:fetch
