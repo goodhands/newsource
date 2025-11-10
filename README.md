@@ -19,7 +19,7 @@ php artisan migrate --db=seed
 ### Using the API
 To use the API, you need to request an access token for your account. One will be issued to you after creating an account with:
 ````
-curl --location 'https://newsource.onrender.com/api/register' \
+curl --location 'https://newsource.onrender.com/register' \
     --header 'Accept: application/json' \
     --form 'name="Samuel Olaegbe"' \
     --form 'email="olaegbesamuel@gmail.com"' \
@@ -31,16 +31,16 @@ The request above will return a token that looks like `1|ZmcoF****************` 
 
 Now, with this token you can make requests to the article endpoints to fetch the latest news from top news sites:
 
-1. Get all recent articles: `https://newsource.onrender.com/api/articles`
-2. Get a single article with the author details: `https://newsource.onrender.com/api/articles/1?include=authors`
-3. Search for a headline or content you're interested in: `https://newsource.onrender.com/api/articles?search=Arsenal`
-4. Fetch all categories: https://newsource.onrender.com/api/categories
-5. Filter articles by a category: https://newsource.onrender.com/api/articles?filter[category]=Technology
-6. Fetch all authors: https://newsource.onrender.com/api/authors
-7. Filter articles by author: https://newsource.onrender.com/api/articles?filter[author]=Samuel Olaegbe
-8. Fetch all tags: https://newsource.onrender.com/api/tags
-9. Fetch articles by tag: https://newsource.onrender.com/api/articles?filter[tag]=Tag
-10. Set your preferences: https://newsource.onrender.com/api/user_preferences
+1. Get all recent articles: `https://newsource.onrender.com/articles`
+2. Get a single article with the author details: `https://newsource.onrender.com/articles/1?include=authors`
+3. Search for a headline or content you're interested in: `https://newsource.onrender.com/articles?search=Arsenal`
+4. Fetch all categories: https://newsource.onrender.com/categories
+5. Filter articles by a category: https://newsource.onrender.com/articles?filter[category]=Technology
+6. Fetch all authors: https://newsource.onrender.com/authors
+7. Filter articles by author: https://newsource.onrender.com/articles?filter[author]=Samuel Olaegbe
+8. Fetch all tags: https://newsource.onrender.com/tags
+9. Fetch articles by tag: https://newsource.onrender.com/articles?filter[tag]=Tag
+10. Set your preferences: https://newsource.onrender.com/user_preferences
 
 See full postman collection [here](https://food16court.postman.co/workspace/Samuel~9704ae0c-e1ef-4647-880a-b72bd635a0ea/collection/11545726-08409c14-921b-473d-b1d4-9508959ffebb?action=share&creator=11545726)
 
