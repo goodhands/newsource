@@ -21,7 +21,6 @@ class FetcherTest extends TestCase
     {
         parent::setUp();
 
-        // Seed sources for testing
         $this->seed(\Database\Seeders\SourceSeeder::class);
     }
 

@@ -117,8 +117,6 @@ class ArticleTest extends TestCase
 
     public function test_article_with_user_preferences(): void
     {
-//        TODO: It may be worth using regular sorting for this. It doesn't look like the
-//        API should be aware of user_preferences.
         $token = $this->createAuthToken();
 
         $response = $this->withHeaders([
